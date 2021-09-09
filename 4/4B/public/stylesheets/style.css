@@ -1,0 +1,275 @@
+.navbar, .navbar-brand, .container-fluid {
+  height: 60px;
+}
+
+.nav-item .btn-login {
+  background-color: #2CA9FF;
+  color: #ffffff;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.nav-item .btn-register {
+  background-color: #2CA9FF;
+  color: #ffffff;
+  border-radius: 7px;
+  text-decoration : none;
+  font-weight : bold;
+  font-size : 16px;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+.navbar-brand {
+  font-weight: bold !important;
+  font-size: 45px !important;
+  color: #ffffff !important;
+}
+
+.img-avatar {
+  width : 41px;
+  height : 41px;
+}
+
+.dropdown-item img {
+  width: 20px;
+  height: 20px;
+}
+
+.dropdown-item {
+  font-weight : bold !important;
+  font-size : 16px !important;
+  font-family: Tahoma, Arial, Helvetica, sans-serif !important;
+  color: #2CA9FF !important;
+}
+
+.dropdown-toggle::after {
+  display: none;
+  background-color: #565656;
+  color: #565656;
+}
+
+.highlight-img {
+  width: 100%;
+}
+
+.card-container {
+  display: flex;
+}
+
+.form-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: Tahoma, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  color: #2CA9FF;
+}
+
+.register input, .register select, .register label {
+  width : 100%;
+  color: #565656;
+  padding: 7px;
+  font-family: Tahoma, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 10px;
+  border: 3px solid #565656;
+  margin: 7px;
+  border-radius: 5px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+
+.register input:focus, .register select:focus, .register label:focus {
+  width : 100%;
+  color: #565656;
+  padding: 7px;
+  font-family: Tahoma, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 10px;
+  border: 3px solid #2CA9FF;
+  outline-style: none;
+  margin: 7px;
+  border-radius: 5px;
+}
+
+.register .btn-register {
+  margin-top: 15px;
+  width: 50%;
+  background-color: #2CA9FF;
+  font-family: Tahoma, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  border: 3px solid #2CA9FF;
+}
+
+.register .btn-register:hover {
+  margin-top: 15px;
+  width: 50%;
+  background-color: white;
+  font-family: Tahoma, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  color: #2CA9FF;
+  padding: 5px;
+  border-radius: 5px;
+  border: 3px solid #2CA9FF;
+}
+
+.upload-img {
+  width: 68px;
+  height: 45px;
+}
+
+.car-detail-image {
+  margin: 15px 0 15px 0;
+  width: 100%;
+}
+
+table {
+  font-family: Tahoma, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 50px;
+}
+
+table .table-left {
+  width: 40%;
+  background-color: #2CA9FF;
+  padding: 5px;
+  margin-right: 10px;
+  margin-bottom: 3px;
+  border-bottom: 5px solid white;
+}
+
+table .table-right {
+  width: 100%;
+  background-color: #565656;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 3px;
+  border-bottom: 5px solid white;
+}
+
+.cardetails-btn {
+  background-color: #2CA9FF ;
+  padding: 7px;
+  width: 130px;
+  border: 3px solid white;
+  border-radius: 5px;
+  font-family: Tahoma, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+  color: #ffffff;
+  margin-bottom: 7px;
+}
+
+.cardetails-btn:hover {
+  background-color: white ;
+  padding: 7px;
+  width: 130px;
+  border: 3px solid #2CA9FF;
+  border-radius: 5px;
+  font-family: Tahoma, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+  color: #2CA9FF;
+  margin-bottom: 7px;
+}
+
+.preview-image {
+  border: 3px dashed #565656;
+  padding: 3px;
+  width: 500px;
+}
+
+.card-img-top {
+  height: 90%;
+}
+
+/* New style */
+
+.task-icon {
+  width: 20%;
+  margin-bottom: 10px;
+}
+
+.card {
+  border-radius: 15px !important; 
+  box-shadow: 1px 1px 10px #2CA9FF; 
+  width: 250px;
+  height: 300px;
+  margin: auto;
+  font-family: Tahoma,Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card-title{
+  background-color: #2CA9FF;
+  border-radius: 7px;
+  padding: 3px;
+  width: fit-content;
+  font-family: Tahoma,Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+.icon-pending{
+  width: 30px;
+}
+
+.icon-complete{
+  width: 30px;
+}
+
+.plus-icon{
+  width: 195px;
+  height: 195px;
+  margin: 0 auto;
+  background-color: rgba(44, 169, 255, 0.6);
+  border-radius: 100px;
+}
+
+.btn-task{
+  background-color: #2CA9FF;
+  color: white;
+  font-family: Tahoma,Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 7px;
+  width: fit-content;
+  vertical-align: middle;
+}
+
+.btn-delete{
+  background-color: #bb0c0c;
+  color: white;
+  font-family: Tahoma,Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 7px;
+  width: fit-content;
+}
+
+.task-item{
+  border: 3px solid #2CA9FF;
+  color: #2CA9FF;
+  font-family: Tahoma,Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 7px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.task-info {
+  font-family: Tahoma,Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  margin: 10px;
+}

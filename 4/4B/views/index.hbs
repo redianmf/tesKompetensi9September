@@ -1,0 +1,70 @@
+{{> header}}
+{{> navbar}}
+
+{{#if isLogin}}
+<h2 class="text-center form-title">Collections</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4 container mx-auto mb-5">
+  
+  {{#each collections}}
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <img class="task-icon" src="/public/icon/task icon.jpg">
+        <h5 class="card-title">{{this.name}}</h5>
+        <p class="card-text"># of # done</p>
+        <img class="icon-pending" src="/public/icon/icon pending.png" alt="">
+        <img class="icon-complete" src="/public/icon/icon complete.png" alt="">
+        {{!-- <p class="card-text">Status : <strong>{{this.status}}</strong></p> --}}
+      </div>
+    </div>
+  </div>
+  {{/each}}
+  <div class="col">
+    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+      <div class="card-body">
+        <img class="plus-icon text-center" src="/public/icon/plus.png">        
+      </div>
+    </div>
+  </div>
+ 
+
+</div>
+{{else}}
+ <h2 class="text-center form-title mt-5">Please Login to Use Application</h2>
+{{/if}}
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Collection</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    {{!-- rental form --}}
+    <div class="container pt-3">
+        <form action="/add-collection/" method="POST" id="addCollection-form">
+        <div class="row register">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <input type="text" placeholder="Name"  name="name">
+            </div>
+            <div class="col-md-2"></div>
+        </div>        
+        <div class="row register">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 text-center">
+                <button type="submit" class="btn-register">Add Collection</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+            <div class="col-md-2"></div>
+        </div>                                      
+        </form>                  
+    </div>
+    </div>
+</div>
+</div>
+
+
+</div>
+
+{{> footer}}

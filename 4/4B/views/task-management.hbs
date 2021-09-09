@@ -1,0 +1,51 @@
+{{> header}}
+{{> navbar}}
+
+{{#if message}}
+<div class="alert alert-{{message.type}}" role="alert">
+  {{message.message}}
+</div>
+{{/if}}
+
+
+<div class="container mt-3">
+    <div class="row pt-4">
+        <div class="col-md-2"></div>
+        <div class="col-md-1 btn-task text-center">Back</div>
+        <div class="col-md-6">
+            <div class="col-md-1"></div>
+            <div class="col-md-4 btn-task text-center">
+                Collection Name
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="col-md-1 btn-delete text-center">Delete</div>
+        <div class="col-md-2"></div>
+    </div>
+     <div class="row mt-3 mb-3">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 btn-task text-center">
+            Add a task
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+     <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="task-info">Task</div>
+            <div class="task-item">#Task</div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row ">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="task-info">Completed</div>
+            <div class="task-item">#Completed</div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>    
+
+</div>
+
+{{> footer}}

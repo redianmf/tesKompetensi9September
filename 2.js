@@ -10,7 +10,7 @@ function search(number1,number2){
             targetArray.push(number);
         }
     }
-console.log(arrayNew);
+// console.log(arrayNew);
 console.log("Data range " +number1+ " sampai " +number2+ " = " + targetArray );
 }
 

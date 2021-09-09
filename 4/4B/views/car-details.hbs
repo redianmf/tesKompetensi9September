@@ -1,0 +1,114 @@
+{{> header}}
+{{> navbar}}
+
+    <div class="container mb-2">        
+        <img src="http://localhost:3000/uploads/{{car.photo}}" alt="" class="car-detail-image">
+    </div>
+    <div class="d-flex col-12 container">
+       <div class="col-4">
+           <table>
+            <tr>
+                <td class="table-left">Name</td>
+                <td class="table-right">{{car.name}}</td>
+            </tr>
+            <tr>
+                <td class="table-left">Brand</td>
+                <td class="table-right">{{car.brand}}</td>
+            </tr>
+            <tr>
+                <td class="table-left">Type</td>
+                <td class="table-right">{{car.type}}</td>
+            </tr>
+            <tr>
+                <td class="table-left">Cost</td>
+                <td class="table-right">Rp {{car.price}}/day</td>
+            </tr>
+             <tr>
+                <td class="table-left">Status</td>
+                <td class="table-right">{{car.status}}</td>
+            </tr>
+            </table>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-4">
+            {{#if isContentOwner}}
+            <div class="text-end">
+                <a href="/edit-car/{{car.id}}"> <button class="cardetails-btn edit-car">Edit</button> </a>
+                 <button class="cardetails-btn delete-car" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button> 
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm Action</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure want to delete this car?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <a href="/delete-car/{{car.id}}"><button type="button" class="btn btn-danger">Delete</button></a>
+                </div>
+                </div>
+            </div>
+            </div>
+            {{else}}
+            <div class="text-end">
+                <button class="cardetails-btn text-center" data-bs-toggle="modal" data-bs-target="#exampleModal1">Rent Now!</button>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Rent This Car</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                {{!-- rental form --}}
+                <div class="container pt-3">
+                    <form action="/rent-car/{{car.id}}" method="POST" id="rentCar-form">
+                    <input type="hidden" name="id" value="{{car.id}}">
+                    <div class="row register">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <input type="date" placeholder="Borrow Date" id="borrow" name="borrow_date">
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <div class="row register">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <input type="date" placeholder="Return Date" id="return" name="return_date">
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <div class="row register">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <input type="text" name="sub_total" id="cost" value="Biaya = Rp. {{car.price}}" disabled>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    
+                    <div class="row register">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8 text-center">
+                            <button type="submit" class="btn-register">Rent Car</button>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>                                      
+                    </form>                  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+
+{{> footer}}

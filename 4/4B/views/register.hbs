@@ -1,0 +1,46 @@
+{{> header}}
+{{> navbar}}
+
+{{#if message}}
+<div class="alert alert-{{message.type}}" role="alert">
+  {{message.message}}
+</div>
+{{/if}}
+
+<h2 class="text-center form-title">Register</h2>
+<div class="container pt-3">
+    <form action="/register" method="POST" id="register-form">
+    <div class="row register">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <input type="email" placeholder="Email" name="email">
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row register">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <input type="text" placeholder="Username" name="username">
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row register">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <input type="password" placeholder="Password" name="password">
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row register">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 text-center">
+            <button type="submit" class="btn-register">Register</button>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    </form>
+    
+
+</div>
+
+{{> footer}}

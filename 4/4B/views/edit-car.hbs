@@ -1,0 +1,98 @@
+{{> header}}
+{{> navbar}}
+
+{{#if message}}
+<div class="alert alert-{{message.type}}" role="alert">
+  {{message.message}}
+</div>
+{{/if}}
+
+<h2 class="text-center form-title">Edit Your Car</h2>
+<div class="container pt-3">
+    <form action="/edit-car" method="POST" id="editCar-form" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="{{car.id}}">
+    <input type="hidden" name="oldImage" value="{{car.photo}}">
+    <div class="row register">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <input type="text" placeholder="Name" name="name" value="{{car.name}}">
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row register">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <input type="text" placeholder="Plat No." name="plat_number" value="{{car.plat_number}}">
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row register">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <input type="text" placeholder="Brand eg.Toyota" name="brand" value="{{car.brand}}">
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row register">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <input type="text" placeholder="Type eg.SUV" name="type" value="{{car.type}}">
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row register">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <input type="number" placeholder="Rent Cost per Day (Rupiah)" name="price" value="{{car.price}}">
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+     <div class="row register">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+                <select name="status" id="carStatus" form="editCar-form">
+                <option value="" selected disabled>Status</option>
+                <option value="Available">Available</option>               
+                <option value="Rented">Rented</option>
+                </select>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row register">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <label for="myCar" style="cursor: pointer;"><img class="upload-img me-2" src="http://localhost:3000/public/icon/upload.png">Upload Car Picture</label>
+            <input type="file" id="myCar" hidden name="image" onchange="handleChange()">
+        </div>
+        <div class="text-center" id="previewImg"></div>
+        <div class="col-md-2"></div>
+    </div>
+    
+    <div class="row register">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 text-center">
+            <button type="submit" class="btn-register">Add Car</button>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <input type="hidden" id="url-thumbnail" value="{{car.photo}}">
+    
+    </form>
+    
+
+</div>
+
+<script>
+    const previewImage = document.getElementById('previewImg');
+
+    const urlThumbnail = document.getElementById('url-thumbnail').value;
+    
+    previewImage.innerHTML = `<img class="preview-image" src="${urlThumbnail}"/>`;
+
+    function handleChange(){  
+        const value = URL.createObjectURL(event.target.files[0]);
+        previewImage.innerHTML = `<img class="preview-image" src="${value}"/>`;
+    }
+</script>
+
+{{> footer}}
